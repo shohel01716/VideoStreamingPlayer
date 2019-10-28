@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivity"
+    android:background="@color/colorBlack">
+
+    <FrameLayout
+        android:id="@+id/main_media_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:keepScreenOn="true"
+        app:layout_constraintDimensionRatio="16:9">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:background="@color/colorBlack"
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:controller_layout_id="@layout/exoplayer_controls"
+            app:fastforward_increment="5000"
+            app:layout_constraintDimensionRatio="16:9"
+            app:rewind_increment="5000"
+            app:show_timeout="2000" />
+
+        <com.github.rahatarmanahmed.cpv.CircularProgressView
+            android:id="@+id/progress_live"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:cpv_animAutostart="true"
+            app:cpv_color="@color/colorAccent"
+            app:cpv_indeterminate="true" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
